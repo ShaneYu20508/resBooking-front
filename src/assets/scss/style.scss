@@ -1,0 +1,51 @@
+body {
+  font-size: 1.2rem;
+
+  .third {
+    color: #F9C80E;
+  }
+
+  .overflow-hidden{
+    overflow: hidden;
+  }
+  .img-enlarge{
+    overflow:hidden;
+    transform:scale(1,1);
+    transition: all 2s ease-out;
+  }
+  
+  .img-enlarge:hover {
+    transform: scale(1.2, 1.2);
+  }
+}
+
+@media (min-width: 1920px){
+    .v-container {
+      max-width: 1200px;
+  }
+}
+
+.bg-img {
+  background-image: url('@/assets/Carousel-1.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  color: white;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 1200px) {
+    height: 30vh; // Slightly smaller height for medium screens
+  }
+
+  @media (max-width: 768px) {
+    height: 10vh; // Even smaller height for mobile screens
+  }
+
+  @media (max-width: 480px) {
+    height: 10vh; // Further reduce height for very small screens
+  }
+}
