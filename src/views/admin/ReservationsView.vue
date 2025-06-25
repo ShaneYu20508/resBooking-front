@@ -4,35 +4,35 @@ VContainer
     VCol(cols="12")
       h1 訂位紀錄管理
 
-    VCol(cols="12" md="3")
+    VCol(cols="12" sm="12" md="3")
       VTextField(
         v-model="filterDate"
         label="篩選日期"
         type="date"
         @change="filterReservations")
 
-    VCol(cols="12" md="1")
+    VCol(cols="2" sm="2" md="1")
       VCheckbox(
         v-model="lunchTime"
         label="中午"
         @change="OnlyLunchChange"
       )
 
-    VCol(cols="12" md="1")
+    VCol(cols="2" sm="2" md="1")
       VCheckbox(
         v-model="dinnerTime"
         label="晚上"
         @change="OnlyDinnerChange"
       )
 
-    VCol(cols="12" md="2")
+    VCol(cols="4" sm="4" md="2")
       VCheckbox(
         v-model="onlyUnchecked"
         label="僅顯示未報到"
         @change="onOnlyUncheckedChange"
       )
 
-    VCol(cols="12" md="2")
+    VCol(cols="4" sm="4" md="2")
       VCheckbox(
         v-model="onlyCheckedIn"
         label="僅顯示已報到"
@@ -40,10 +40,10 @@ VContainer
       )
   //-  顯示用餐總人數
   VRow
-    VCol 中午總訂位人數：{{ lunchPeopleCount }}
-    VCol.text-red 標記號碼有未到紀錄，請致電提醒
+    VCol(cols="6") 中午總訂位人數：{{ lunchPeopleCount }}
+    VCol(cols="6").text-red 標記號碼有未到紀錄，請致電提醒
   VRow
-    VCol 晚上總訂位人數：{{ dinnerPeopleCount }}
+    VCol(cols="6") 晚上總訂位人數：{{ dinnerPeopleCount }}
     //- 訂位資料
     VCol(cols="12")
       VDataTable(:items="reservations" :headers="headers" item-value="_id" item-key="_id")

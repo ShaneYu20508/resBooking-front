@@ -26,7 +26,7 @@
     VContainer.d-flex.align-center.w-100
       VBtn(to="/" :active="false")
         VAppBarTitle
-          strong 義在家
+          strong MI CASA
       VSpacer
       //- 手機版導覽列
       template(v-if="isMobile")

@@ -1,7 +1,7 @@
 <template lang="pug">
 h1.bg-img 線上訂位
 VContainer.Vcon
-  VRow.mt-5
+  VRow.mt-5.booking
     VCol(cols="12")
       VForm(:disabled="isSubmitting" @submit.prevent="submit")
         VRow
@@ -90,6 +90,17 @@ import { useForm, useField } from 'vee-validate'
 import * as yup from 'yup'
 import { useSnackbar } from 'vuetify-use-dialog'
 import { useApi } from '@/composables/axios'
+import gsap from 'gsap'
+
+onMounted(() => {
+  const tl = gsap.timeline()
+  tl.from('.booking', {
+    duration: 1,
+    opacity: 0,
+    y: 50,
+    ease: 'power2.out'
+  })
+})
 
 // API composable
 const { api } = useApi()
@@ -151,8 +162,8 @@ const { handleSubmit, isSubmitting, resetForm } = useForm({
       })
   }),
   initialValues: {
-    name: '王曉明',
-    phone: '0912345678',
+    name: '',
+    phone: '',
     peopleCount: 1,
     reservationDate: tomorrow,
     timePeriod: '中午',
